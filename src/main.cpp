@@ -56,6 +56,12 @@ int main(int argc, char * argv[]) {
    listen_input();
 
    var::update();
+   
+   printf("Ponder: %d\n", var::Ponder);
+   printf("SMP: %d\n", var::SMP);
+   printf("Threads: %d\n", var::Threads);
+   printf("Hash: %d\n", var::Hash);
+   printf("Chess_960: %d\n", var::Chess_960);
 
    uci_loop();
 
@@ -109,7 +115,8 @@ static void uci_loop() {
             var::update();
 
             clear_pawn_table();
-            tt::G_TT.set_size(int64(var::Hash) << (20 - 4)); // * 1MiB / 16 bytes
+            //tt::G_TT.set_size(int64(var::Hash) << (20 - 4)); // * 1MiB / 16 bytes
+            tt::G_TT.set_size(4*1024*1024/16);
 
             init_done = true;
          }

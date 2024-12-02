@@ -50,6 +50,7 @@ public :
 
    TT ();
 
+   int get_size () { return p_size; }
    void set_size (int size);
 
    void clear    ();
