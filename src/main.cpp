@@ -116,7 +116,7 @@ static void uci_loop() {
 
             clear_pawn_table();
             //tt::G_TT.set_size(int64(var::Hash) << (20 - 4)); // * 1MiB / 16 bytes
-            tt::G_TT.set_size(4*1024*1024/16);
+            tt::G_TT.set_size(2*1024*1024/16);
 
             init_done = true;
          }
